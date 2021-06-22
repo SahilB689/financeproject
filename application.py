@@ -5,7 +5,7 @@ Copyright Daniel Nitu & CS50
 start app: flask run
 start db: phpliteadmin finance.db
 '''
-
+import os 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
@@ -36,8 +36,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
-
+db = SQL(os.getenv("DATABASE_URL"))
 @app.route("/")
 @login_required
 def index():
