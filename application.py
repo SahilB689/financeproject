@@ -1,10 +1,3 @@
-''' 
-C$50 Finance
-Copyright Daniel Nitu & CS50
-
-start app: flask run
-start db: phpliteadmin finance.db
-'''
 import os 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, url_for
